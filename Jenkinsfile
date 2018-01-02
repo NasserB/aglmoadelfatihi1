@@ -16,5 +16,15 @@ pipeline {
                 }
             }
         }
+        stage ('Test') {
+            steps {
+                bat 'mvn site'
+            }
+            post {
+                success {
+                    junit 'target/surefire-reports/**/*.xml' 
+                }
+            }
+        }
     }
 }
