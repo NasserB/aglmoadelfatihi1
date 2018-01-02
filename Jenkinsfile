@@ -9,7 +9,6 @@ pipeline {
         stage ('Build') {
             steps {
                 
-                 println "ls".execute().text
             }
             post {
                 success {
@@ -19,7 +18,6 @@ pipeline {
         }
         stage ('Test') {
             steps {
-             println "ls".execute().text
             }
             post {
                 success {
