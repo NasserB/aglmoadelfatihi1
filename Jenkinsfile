@@ -8,7 +8,8 @@ pipeline {
         
         stage ('Build') {
             steps {
-                echo "build step"
+                
+                 "cmd /c mvn build".execute()
             }
             post {
                 success {
@@ -18,7 +19,7 @@ pipeline {
         }
         stage ('Test') {
             steps {
-               echo "Test step"
+             "cmd /c mvn test".execute()
             }
             post {
                 success {
