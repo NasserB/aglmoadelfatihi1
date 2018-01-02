@@ -9,7 +9,7 @@ pipeline {
         stage ('Build') {
             steps {
                 
-                 "mvn build".execute()
+                 println "ls".execute().text
             }
             post {
                 success {
@@ -19,7 +19,7 @@ pipeline {
         }
         stage ('Test') {
             steps {
-             "mvn test".execute()
+             println "ls".execute().text
             }
             post {
                 success {
