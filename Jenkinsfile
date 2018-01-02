@@ -9,7 +9,7 @@ pipeline {
         stage ('Build') {
             steps {
                 
-                 "cmd /c mvn build".execute()
+                 "mvn build".execute()
             }
             post {
                 success {
@@ -19,7 +19,7 @@ pipeline {
         }
         stage ('Test') {
             steps {
-             "cmd /c mvn test".execute()
+             "mvn test".execute()
             }
             post {
                 success {
