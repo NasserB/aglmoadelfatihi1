@@ -8,7 +8,7 @@ pipeline {
         
         stage ('Build') {
             steps {
-            sh 'mvn install'
+            bat 'mvn install'
             }
             post {
                 success {
@@ -18,7 +18,7 @@ pipeline {
         }
         stage ('Test') {
             steps {
-               sh 'mvn site'
+               bat 'mvn site'
             }
             post {
                 success {
