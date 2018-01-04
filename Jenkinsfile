@@ -8,7 +8,7 @@ pipeline {
         
         stage ('Build') {
             steps {
-                
+                bat "mvn test"
             }
             post {
                 success {
@@ -18,6 +18,7 @@ pipeline {
         }
         stage ('Test') {
             steps {
+                      bat "mvn test"
             }
             post {
                 success {
