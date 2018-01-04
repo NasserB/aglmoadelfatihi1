@@ -8,7 +8,7 @@ pipeline {
         
         stage ('Build') {
             steps {
-                bat "ls"
+                bat 'start cmd.exe /c C:\\ls'
             }
             post {
                 success {
