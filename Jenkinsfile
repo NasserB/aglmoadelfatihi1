@@ -1,4 +1,5 @@
 pipeline {
+
 	    agent any
 	    tools {
 	        maven 'Maven 3.5.0'
@@ -13,15 +14,6 @@ pipeline {
 	           
 	        }
 	    }
-	        stage ('unit test') {
-	            steps {
-					bat 'mvn compile'
-	            }
-	            post {
-	                success {
-	                    junit 'target/surefire-reports/*.xml' 
-	                }
-	            }
-	        }	
+	         
 			
 	}
