@@ -1,4 +1,4 @@
-	pipeline {
+pipeline {
 	    agent any
 	    tools {
 	        maven 'Maven 3.5.0'
@@ -12,6 +12,7 @@
 	            }
 	           
 	        }
+	    }
 	        stage ('unit test') {
 	            steps {
 					bat 'mvn compile'
@@ -21,27 +22,6 @@
 	                    junit 'target/surefire-reports/*.xml' 
 	                }
 	            }
-	        }
-
-		 
-			}
-			stage ('generate documentation') {
-				steps {
-					bat 'mvn javadoc:javadoc'
-				}
-				post{
-					success{
-						step([$class: 'JavadocArchiver', javadocDir: 'target/site/apidocs', keepAll: false])
-					}
-				}
-			}
-			stage('package'){
-				steps{
-					bat 'mvn package'
-				}
-
-			}
-			
-			
+	        }	
 			
 	}
